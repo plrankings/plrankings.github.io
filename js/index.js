@@ -16,11 +16,12 @@ $(document).ready( function () {
 
 function createDataTable() {
     return $('#rankings-table').DataTable({
-            "paging": false,
-            "searching": true, 
-            "ordering": false,
-            "info": false
-            });
+            paging: false,
+            searching: true, 
+            ordering: false,
+            info: false,
+            responsive: true
+    });
 }
 
 function setSearch() {

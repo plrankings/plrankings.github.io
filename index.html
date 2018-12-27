@@ -27,19 +27,27 @@
   </head>
   <body>
 
-    <h3>Programming Languages Rankings Comparison (top 20 languages)</h3>
+    <h3>Programming Languages Rankings Comparison </h3>
 
-    <div class="top-div">
-    <input type="text" id="search" placeholder="Search and filter on rankings">
+    <div style="font-size: 0.8em">
+        <i>
+        <span id="span_last_updated">Last Updated</span>: 
+        <b id="b_last_updated">12/29/2018</b>
+        </i>
     </div>
 
     <div class="top-div">
-        Filter Rankings:
+        Choose the Rankings:
         <img src="img/ieee-logo-mini.png" alt="ieee logo" title="IEEE Spectrum">
         <img src="img/pypl-logo-mini.png" alt="pypl logo" title="PYPL Index">        
         <img src="img/redmonk-logo-mini.png" alt="redmonk logo" title="RedMonk">
         <img src="img/tiobe-logo-mini.png" alt="tiobe logo" title="Tiobe Index">
     </div>
+
+    <div class="top-div">
+    <input type="text" id="search" placeholder="Search and filter on rankings">
+    </div>
+    
     
 
     <table class="table" id="rankings-table">
@@ -59,8 +67,8 @@
             <th scope="row">Java</th>
             <td><a href="https://www.tiobe.com/tiobe-index/" target="_blank">
               Tiobe Index</a>
-              <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>
+              <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i> -->
             </td>
             <td><b>1</b></td>
             <td>1</td>
@@ -74,8 +82,8 @@
             <th scope="row" id="language_column" class="invisible-text">Java</th>
             <td><a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018" target="_blank">
               IEEE Spectrum</a>
-              <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>              
+              <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>               -->
             </td>
             <td><b>2</b></td>
             <td>1</td>
@@ -89,8 +97,8 @@
             <th scope="row" id="language_column" class="invisible-text">Java</th>
             <td><a href="http://pypl.github.io/PYPL.html" target="_blank">
               PYPL Index</a>
-              <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>              
+              <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>               -->
             </td>
             <td><b>1</b></td>
             <td>1</td>
@@ -103,8 +111,8 @@
             <th scope="row" id="language_column" class="invisible-text">Java</th>
             <td><a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/" target="_blank">
               RedMonk</a>
-              <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>              
+              <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>               -->
             </td>
             <td><b>1</b></td>
             <td>4</td>
@@ -120,8 +128,8 @@
               <th scope="row">Python</th>
               <td><a href="https://www.tiobe.com/tiobe-index/" target="_blank">
                 Tiobe Index</a>
-                <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>              
+                <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>               -->
               </td>
               <td><b>1</b></td>
               <td>1</td>
@@ -135,8 +143,8 @@
               <th scope="row" id="language_column" class="invisible-text">Python</th>
               <td><a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018" target="_blank">
                 IEEE Spectrum</a>
-                <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>
+                <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i> -->
               </td>
               <td><b>2</b></td>
               <td>1</td>
@@ -150,8 +158,8 @@
               <th scope="row" id="language_column" class="invisible-text">Python</th>
               <td><a href="http://pypl.github.io/PYPL.html" target="_blank">
                 PYPL Index</a>
-                <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>                
+                <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>                 -->
               </td>
               <td><b>1</b></td>
               <td>1</td>
@@ -164,8 +172,8 @@
               <th scope="row" id="language_column" class="invisible-text">Python</th>
               <td><a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/" target="_blank">
                 RedMonk</a>
-                <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>                
+                <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>                 -->
               </td>
               <td><b>1</b></td>
               <td>4</td>
