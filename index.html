@@ -60,6 +60,8 @@
             <th scope="row">Java</th>
             <td><a href="https://www.tiobe.com/tiobe-index/" target="_blank">
               Tiobe Index</a>
+              <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>
             </td>
             <td><b>1</b></td>
             <td>1</td>
@@ -73,6 +75,8 @@
             <th scope="row" id="language_column" class="invisible-text">Java</th>
             <td><a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018" target="_blank">
               IEEE Spectrum</a>
+              <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>              
             </td>
             <td><b>2</b></td>
             <td>1</td>
@@ -86,6 +90,8 @@
             <th scope="row" id="language_column" class="invisible-text">Java</th>
             <td><a href="http://pypl.github.io/PYPL.html" target="_blank">
               PYPL Index</a>
+              <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>              
             </td>
             <td><b>1</b></td>
             <td>1</td>
@@ -98,6 +104,8 @@
             <th scope="row" id="language_column" class="invisible-text">Java</th>
             <td><a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/" target="_blank">
               RedMonk</a>
+              <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>              
             </td>
             <td><b>1</b></td>
             <td>4</td>
@@ -113,6 +121,8 @@
               <th scope="row">Python</th>
               <td><a href="https://www.tiobe.com/tiobe-index/" target="_blank">
                 Tiobe Index</a>
+                <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>              
               </td>
               <td><b>1</b></td>
               <td>1</td>
@@ -126,6 +136,8 @@
               <th scope="row" id="language_column" class="invisible-text">Python</th>
               <td><a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018" target="_blank">
                 IEEE Spectrum</a>
+                <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>
               </td>
               <td><b>2</b></td>
               <td>1</td>
@@ -139,6 +151,8 @@
               <th scope="row" id="language_column" class="invisible-text">Python</th>
               <td><a href="http://pypl.github.io/PYPL.html" target="_blank">
                 PYPL Index</a>
+                <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>                
               </td>
               <td><b>1</b></td>
               <td>1</td>
@@ -151,6 +165,8 @@
               <th scope="row" id="language_column" class="invisible-text">Python</th>
               <td><a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/" target="_blank">
                 RedMonk</a>
+                <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
+                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>                
               </td>
               <td><b>1</b></td>
               <td>4</td>
@@ -186,48 +202,4 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="js/dataTables.rowsGroup.js"></script>
 
-<script>
-$(document).ready( function () {
-    var table = $('#rankings-table').DataTable({
-      "paging": false,
-      "searching": true,
-    });
-
-    $('#search').on( 'keyup', function () {
-      table.search( this.value ).draw();
-      var language_columns = $("[id='language_column']");
-      console.log(language_columns);
-      console.log(language_columns.length);
-      if (this.value.length>0 && language_columns.length%3!=0) {
-        language_columns.each(function() {
-          $(this).removeClass('invisible-text');
-          unGroupFirstColumns();
-        });
-      } else {
-        language_columns.each(function() {
-          $(this).addClass('invisible-text');
-          groupFirstColumns();
-        });
-      }
-    });
-
-    groupFirstColumns();
-
-} );
-
-function groupFirstColumns() {
-  // 3,4,5 - 7,8,9
-  let group = 1;
-  for (l=3; l<(4*20); l++) {
-    if (group++ == 4) {
-      group = 1;
-      continue;
-    }
-    $(`tbody > tr:nth-child(${l}) > th`).css("border-color","transparent");
-  }
-}
-
-function unGroupFirstColumns() {
-  $(`tbody > tr > th`).css("border-top","1px solid #dee2e6");
-}
-</script>
+<script src="js/index.js"></script>
