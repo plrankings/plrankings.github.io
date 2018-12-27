@@ -91,3 +91,16 @@ function displayFilters(filter) {
     });    
 }
 
+function configLogoFilters() {
+    $(`.top-div img`).each(function() {
+        $(this).click(function() {
+            let img_disabled = 'img-disabled';
+            if ($(this).hasClass(img_disabled)) {
+                $(this).removeClass(img_disabled);
+            } else {
+                $(this).addClass(img_disabled);    
+            }
+        });
+    });
+    
+}
