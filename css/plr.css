@@ -1,3 +1,10 @@
+tr:hover {
+    color: #495057; 
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+
+}
+
 .green {
     color: rgb(83, 179, 120);
 }
