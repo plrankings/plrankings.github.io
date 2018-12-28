@@ -1,9 +1,9 @@
 <html>
   <head>
-    <title>Teste Tabela</title>
+    <title>Programming Languages Rankings Comparison (IEEE, PYPL, RedMonk and TIOBE)</title>
     <meta charset="utf-8">
     <meta name="description" content="Programming languages rankings comparison">
-    <meta name="keywords" content="Programming,languages,rankings,ranking,comparison,javascript,java,c#,python,kotlin,php,go,c++,cobol,groovy,sql,scala,ruby,lua,typescript">
+    <meta name="keywords" content="Programming,languages,rankings,ranking,popularity, comparison,javascript,java,c#,python,kotlin,php,go,c++,cobol,groovy,sql,scala,ruby,lua,typescript">
     <meta name="author" content="José Yoshiriro (jyoshiriro@gmail.com)">    
 
         <!-- Bootstrap core CSS -->
@@ -32,19 +32,47 @@
     <div style="font-size: 0.8em">
         <i>
         <span id="span_last_updated">Last Updated</span>: 
-        <b id="b_last_updated">12/29/2018</b>
+        <b id="b_last_updated">12/27/2018</b>
         </i>
     </div>
 
     <div class="top-div">
-        Choose the Rankings:
-        <img src="img/ieee-logo-mini.png" alt="ieee logo" title="IEEE Spectrum">
-        <img src="img/pypl-logo-mini.png" alt="pypl logo" title="PYPL Index">        
-        <img src="img/redmonk-logo-mini.png" alt="redmonk logo" title="RedMonk">
-        <img src="img/tiobe-logo-mini.png" alt="tiobe logo" title="Tiobe Index">
+        <div>Choose the Rankings:</div>
+        <div class="ranking-box">
+          <img src="img/ieee-logo-mini.png" alt="ieee logo" title="IEEE Spectrum">
+          <br>
+          <a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018"
+          target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
+          <i class="fas fa-info-circle"></i>
+        </div>
+
+        <div class="ranking-box">
+          <img src="img/pypl-logo-mini.png" alt="pypl logo" title="PYPL Index">        
+          <br>
+          <a href="http://pypl.github.io/PYPL.html"
+          target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
+          <i class="fas fa-info-circle"></i>
+        </div>
+
+        <div class="ranking-box">
+          <img src="img/redmonk-logo-mini.png" alt="redmonk logo" title="RedMonk Ranking">
+          <br>
+          <a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/"
+          target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
+          <i class="fas fa-info-circle"></i>
+        </div>
+
+        <div class="ranking-box">
+          <img src="img/tiobe-logo-mini.png" alt="tiobe logo" title="Tiobe Index">
+          <br>
+          <a href="https://www.tiobe.com/tiobe-index/"
+          target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
+          <i class="fas fa-info-circle"></i>
+        </div>
+
     </div>
     <p>
-    <div class="top-div">
+    <div class="top-div" style="display:none">
     <input type="text" id="search" placeholder="Search and filter on rankings">
     </div>
     </p>
@@ -54,142 +82,89 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">Language</th>
-            <th scope="col">Ranking</th>
-            <th scope="col">Position</th>
-            <th scope="col">Prior Pos</th>
-            <th scope="col">Change(Pos)</th>
-            <th scope="col">Change(%)</th>
-            <th scope="col">Last Updated</th>
+            <th scope="col" data-ranking="ieee">IEEE</th>
+            <th scope="col" data-ranking="pypl">PYPL</th>
+            <th scope="col" data-ranking="redmonk">RedMonk</th>
+            <th scope="col" data-ranking="tiobe">TIOBE</th>
+            <th scope="col">Average<br>Position</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">Java</th>
-            <td><a href="https://www.tiobe.com/tiobe-index/" target="_blank">
-              Tiobe Index</a>
-              <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i> -->
+            <td data-ranking="ieee">
+              <span>3</span>
+              <i class="neutral far fa-stop-circle" aria-hidden="true"></i>
             </td>
-            <td><b>1</b></td>
-            <td>1</td>
-            <td><i class="green fa fa-angle-up" aria-hidden="true"></i> 
-              <b class="green">2</b>
-            </td>
-            <td><b class="green">0.5%</b></td>
-            <td><b>12/25/2018</b></td>
-          </tr>
-          <tr>
-            <th scope="row" id="language_column" class="invisible-text">Java</th>
-            <td><a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018" target="_blank">
-              IEEE Spectrum</a>
-              <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>               -->
-            </td>
-            <td><b>2</b></td>
-            <td>1</td>
-            <td><i class="red fa fa-angle-down" aria-hidden="true"></i> 
+            <td data-ranking="pypl">
+              <span>2</span>
+              <i class="red fa fa-angle-down" aria-hidden="true"></i> 
               <b class="red">1</b>
             </td>
-            <td><b class="red">2.67%</b></td>
-            <td><b>12/25/2018</b></td>
-          </tr> 
-          <tr>
-            <th scope="row" id="language_column" class="invisible-text">Java</th>
-            <td><a href="http://pypl.github.io/PYPL.html" target="_blank">
-              PYPL Index</a>
-              <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>               -->
+            <td data-ranking="redmonk">
+              <span>2</span>
+                <i class="neutral far fa-stop-circle" aria-hidden="true"></i>
             </td>
-            <td><b>1</b></td>
-            <td>1</td>
-            <td><i class="neutral far fa-stop-circle" aria-hidden="true"></i> 
-            </td>
-            <td><b class="neutral">0%</b></td>
-            <td><b>12/25/2018</b></td>
-          </tr>  
-          <tr>
-            <th scope="row" id="language_column" class="invisible-text">Java</th>
-            <td><a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/" target="_blank">
-              RedMonk</a>
-              <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-              <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>               -->
-            </td>
-            <td><b>1</b></td>
-            <td>4</td>
-            <td><i class="green fa fa-angle-up" aria-hidden="true"></i> 
-              <b class="green">3</b>
-            </td>
-            <td><b class="green">1.29%</b></td>
-            <td><b>12/25/2018</b></td>
-          </tr>                               
-
+            <td data-ranking="tiobe">
+                <span>1</span>
+                <i class="neutral far fa-stop-circle" aria-hidden="true"></i>
+            </td>            
+            <td><b>2</b></td>
+          </tr>
 
           <tr>
-              <th scope="row">Python</th>
-              <td><a href="https://www.tiobe.com/tiobe-index/" target="_blank">
-                Tiobe Index</a>
-                <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>               -->
-              </td>
-              <td><b>1</b></td>
-              <td>1</td>
-              <td><i class="green fa fa-angle-up" aria-hidden="true"></i> 
-                <b class="green">2</b>
-              </td>
-              <td><b class="green">0.5%</b></td>
-              <td><b>12/25/2018</b></td>
-            </tr>
-            <tr>
-              <th scope="row" id="language_column" class="invisible-text">Python</th>
-              <td><a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018" target="_blank">
-                IEEE Spectrum</a>
-                <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i> -->
-              </td>
-              <td><b>2</b></td>
-              <td>1</td>
-              <td><i class="red fa fa-angle-down" aria-hidden="true"></i> 
-                <b class="red">1</b>
-              </td>
-              <td><b class="red">2.67%</b></td>
-              <td><b>12/25/2018</b></td>
-            </tr> 
-            <tr>
-              <th scope="row" id="language_column" class="invisible-text">Python</th>
-              <td><a href="http://pypl.github.io/PYPL.html" target="_blank">
-                PYPL Index</a>
-                <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>                 -->
-              </td>
-              <td><b>1</b></td>
-              <td>1</td>
-              <td><i class="neutral far fa-stop-circle" aria-hidden="true"></i> 
-              </td>
-              <td><b class="neutral">0%</b></td>
-              <td><b>12/25/2018</b></td>
-            </tr>  
-            <tr>
-              <th scope="row" id="language_column" class="invisible-text">Python</th>
-              <td><a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/" target="_blank">
-                RedMonk</a>
-                <!-- <i class="fas fa-search-minus neutral mleft-0_5em font-0_8em" data-ranking-filter="true"></i>
-                <i class="fas fa-expand-arrows-alt neutral mleft-0_5em font-0_8em" data-ranking-filter="false"></i>                 -->
-              </td>
-              <td><b>1</b></td>
-              <td>4</td>
-              <td><i class="green fa fa-angle-up" aria-hidden="true"></i> 
-                <b class="green">3</b>
-              </td>
-              <td><b class="green">1.29%</b></td>
-              <td><b>12/25/2018</b></td>
-            </tr>                               
+          <th scope="row">Python</th>
+          <td data-ranking="ieee">
+              <span>1</span>
+            <i class="neutral far fa-stop-circle" aria-hidden="true"></i>
+          </td>
+          <td data-ranking="pypl">
+              <span>1</span>
+            <i class="green fa fa-angle-up" aria-hidden="true"></i> 
+            <b class="green">1</b>
+          </td>
+          <td data-ranking="redmonk">
+              <span>3</span>
+              <i class="neutral far fa-stop-circle" aria-hidden="true"></i>
+          </td>
+          <td data-ranking="tiobe">
+              <span>3</span>
+              <i class="green fa fa-angle-up" aria-hidden="true"></i> 
+              <b class="green">1</b>
+          </td>            
+          <td><b>2</b></td>
+        </tr>   
+
+        <tr>
+        <th scope="row">Javascript</th>
+        <td data-ranking="ieee">
+            <span>8</span>
+          <i class="red fa fa-angle-down" aria-hidden="true"></i> 
+          <b class="red">1</b>
+        </td>
+        <td data-ranking="pypl">
+            <span>3</span>
+          <i class="green fa fa-angle-up" aria-hidden="true"></i> 
+          <b class="green">1</b>
+        </td>
+        <td data-ranking="redmonk">
+            <span>1</span>
+            <i class="neutral far fa-stop-circle" aria-hidden="true"></i>
+        </td>
+        <td data-ranking="tiobe">
+            <span>7</span>
+            <i class="red fa fa-angle-down" aria-hidden="true"></i> 
+            <b class="red">1</b>
+        </td>            
+        <td><b>4.75</b></td>
+      </tr>                  
         </tbody>
       </table>
       
     
     <div>
       <span id="span_last_updated">Last Updated</span>: 
-      <b id="b_last_updated">12/29/2018</b>
+      <b id="b_last_updated">12/27/2018</b>
     </div>
   </body>
 </html>
@@ -207,6 +182,7 @@
   <!--<script src="js/creative.min.js"></script>-->
 
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
 <script src="js/dataTables.rowsGroup.js"></script>
 
 <script src="js/index.js"></script>

@@ -6,7 +6,7 @@ $(document).ready( function () {
 
     setSearch(dtable);
 
-    groupFirstColumns();
+    //groupFirstColumns();
 
     setRankingsFilters();
 
@@ -37,12 +37,12 @@ function searchInTable() {
     if (value.length>0 && language_columns.length%3!=0) {
         language_columns.each(function() {
             $(this).removeClass('invisible-text');
-            unGroupFirstColumns();
+            //unGroupFirstColumns();
         });
     } else {
         language_columns.each(function() {
             $(this).addClass('invisible-text');
-            groupFirstColumns();
+            //groupFirstColumns();
         });
     }
 }
@@ -102,7 +102,7 @@ function configLogoFilters() {
     $(`.top-div img`).each(function() {
         let img = $(this);
         
-        let ranking_name = img.attr('title');
+        let ranking_name = img.attr('title').split(' ')[0].toLowerCase();
         rankings_list.push(ranking_name);
 
         img.click(function() {
@@ -124,23 +124,50 @@ function configLogoFilters() {
                 language_columns.each(function() {
                     $(this).removeClass('invisible-text');
                 });
-                unGroupFirstColumns();
+                //unGroupFirstColumns();
             } else {
                 language_columns.each(function() {
                     $(this).addClass('invisible-text');
                 });                
-                groupFirstColumns();
+                //groupFirstColumns();
             }
 
-            $('#rankings-table > tbody > tr > td > a').each(function(){
-                if (rankings_list.indexOf($(this).html().trim())<0) {
-                    $(this).parent().parent().hide();
+            let rankings_columns = $('#rankings-table > tbody > tr > td[data-ranking], #rankings-table > thead > tr > th[data-ranking]');
+            rankings_columns.each(function(){
+                if (rankings_list.indexOf($(this).attr('data-ranking').trim())<0) {
+                    $(this).hide();
                 } else {
-                    $(this).parent().parent().show();
+                    $(this).show();
                 }
             });
+
+            updateAverages();
 
         });
     });
     
+}
+
+function updateAverages() {
+    let lines = $("#rankings-table > tbody > tr").length;
+    let columns = [2,3,4,5];
+    let avg_column = 6;
+    for (l=1; l<=lines; l++) {
+        let sum = 0;
+        let count = 0;
+        for (var c=0; c<columns.length; c++) {
+            $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${columns[c]}) > span`).each(function(){
+                if ($(this).is(":visible")) {
+                    count++;
+                    sum += Number($(this).html());
+                }
+            });
+        }
+        $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${avg_column}) > b`).html((sum/count));
+    }
+}
+
+
+function sortTable() {
+    dtable.order( [ 5, 'asc' ], [ 0, 'asc' ] ).draw();
 }
