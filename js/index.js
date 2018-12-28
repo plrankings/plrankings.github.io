@@ -1,7 +1,11 @@
 var dtable;
 var active_rankings = 4;
+var position_points = [];
 
 $(document).ready( function () {
+
+    configPoints();
+
     dtable = createDataTable();
 
     setSearch(dtable);
@@ -13,6 +17,13 @@ $(document).ready( function () {
     configLogoFilters();
 
 } );
+
+function configPoints() {
+    let limit = 20;
+    for (p=limit; p>0; p--) {
+        position_points.push(2**p);
+    }
+}
 
 function createDataTable() {
     return $('#rankings-table').DataTable({
@@ -37,30 +48,12 @@ function searchInTable() {
     if (value.length>0 && language_columns.length%3!=0) {
         language_columns.each(function() {
             $(this).removeClass('invisible-text');
-            //unGroupFirstColumns();
         });
     } else {
         language_columns.each(function() {
             $(this).addClass('invisible-text');
-            //groupFirstColumns();
         });
     }
-}
-
-function groupFirstColumns() {
-  // 2,3,4 - 6,7,8 ...
-  let group = 1;
-  for (l=2; l<(4*20); l++) {
-    if (group++ == 4) {
-      group = 1;
-      continue;
-    }
-    $(`tbody > tr:nth-child(${l}) > th`).css("border-color","transparent");
-  }
-}
-
-function unGroupFirstColumns() {
-  $(`tbody > tr > th`).css("border-top","1px solid #dee2e6");
 }
 
 function setRankingsFilters() {
@@ -124,12 +117,10 @@ function configLogoFilters() {
                 language_columns.each(function() {
                     $(this).removeClass('invisible-text');
                 });
-                //unGroupFirstColumns();
             } else {
                 language_columns.each(function() {
                     $(this).addClass('invisible-text');
                 });                
-                //groupFirstColumns();
             }
 
             let rankings_columns = $('#rankings-table > tbody > tr > td[data-ranking], #rankings-table > thead > tr > th[data-ranking]');
@@ -154,15 +145,19 @@ function updateAverages() {
     let avg_column = 6;
     for (l=1; l<=lines; l++) {
         let sum = 0;
+        let sum_factor = 0;
         let count = 0;
         for (var c=0; c<columns.length; c++) {
             $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${columns[c]}) > span`).each(function(){
                 if ($(this).is(":visible")) {
                     count++;
-                    sum += Number($(this).html());
+                    let position = Number($(this).html().trim());
+                    sum += position;
+                    sum_factor += position_points[position-1]
                 }
             });
         }
+        console.log('sum_factor ', sum_factor);
         $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${avg_column}) > b`).html((sum/count));
     }
 }
