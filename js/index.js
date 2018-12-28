@@ -158,11 +158,11 @@ function updateAverages() {
             });
         }
         console.log('sum_factor ', sum_factor);
-        $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${avg_column}) > b`).html((sum/count));
+        $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${avg_column}) > b`).html((sum/count).toFixed(2));
     }
 }
 
 
 function sortTable() {
-    dtable.order( [ 5, 'asc' ], [ 0, 'asc' ] ).draw();
+    ;
 }
