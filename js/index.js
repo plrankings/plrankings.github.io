@@ -143,12 +143,13 @@ function configLogoFilters() {
 function updateAverages() {
     let table_lines = [];
     let lines = $("#rankings-table > tbody > tr").length;
-    let columns = [2,3,4,5];
-    let avg_column = 6;
+    let columns = [3,4,5,6];
+    let avg_column = 7;
     for (l=1; l<=lines; l++) {
         let sum = 0;
         let sum_factor = 0;
         let count = 0;
+        $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(1)`).html('#');
         for (var c=0; c<columns.length; c++) {
             $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${columns[c]}) > span`).each(function(){
                 if ($(this).is(":visible")) {
@@ -159,17 +160,14 @@ function updateAverages() {
                 }
             });
         }
-        console.log(`sum_factor line ${l}`, sum_factor);
         let averageNum = sum/count;
         let averageFixed2 = averageNum.toFixed(2);
-        let averageDisplay = averageFixed2.indexOf('.')>0 ? averageFixed2 : averageNum; 
+        let averageDisplay = averageFixed2.indexOf('.00')>0 ? averageNum : averageFixed2; 
         $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${avg_column}) > b`).html(averageDisplay);
 
         table_lines.push({average:averageNum, sum_factor:sum_factor, tr: $(`#rankings-table > tbody > tr:nth-child(${l})`).html()});
 
         table_lines.sort((a,b) => ( (a.average - b.average) || (b.sum_factor - a.sum_factor) )); 
-        console.log(table_lines);
-
     }
 
     sortTable(table_lines);
@@ -182,5 +180,6 @@ function sortTable(table_lines) {
     table_body.html('');
     for (l=0; l<table_lines.length; l++) {
         table_body.append(`<tr>${table_lines[l].tr}</tr>`);
+        $(`#rankings-table > tbody > tr:nth-child(${l+1}) > td:nth-child(1)`).html(`<b>${l+1}</b>`);        
     }
 }
