@@ -10,18 +10,19 @@ $(document).ready( function () {
 
     setSearch(dtable);
 
-    //groupFirstColumns();
-
     setRankingsFilters();
 
     configLogoFilters();
+
+    updateAverages();
+
 
 } );
 
 function configPoints() {
     let limit = 20;
     for (p=limit; p>0; p--) {
-        position_points.push(2**p);
+        position_points.push(parseInt(1.5**p));
     }
 }
 
@@ -140,6 +141,7 @@ function configLogoFilters() {
 }
 
 function updateAverages() {
+    let table_lines = [];
     let lines = $("#rankings-table > tbody > tr").length;
     let columns = [2,3,4,5];
     let avg_column = 6;
@@ -153,16 +155,32 @@ function updateAverages() {
                     count++;
                     let position = Number($(this).html().trim());
                     sum += position;
-                    sum_factor += position_points[position-1]
+                    sum_factor += position_points[position-1];
                 }
             });
         }
-        console.log('sum_factor ', sum_factor);
-        $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${avg_column}) > b`).html((sum/count).toFixed(2));
+        console.log(`sum_factor line ${l}`, sum_factor);
+        let averageNum = sum/count;
+        let averageFixed2 = averageNum.toFixed(2);
+        let averageDisplay = averageFixed2.indexOf('.')>0 ? averageFixed2 : averageNum; 
+        $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${avg_column}) > b`).html(averageDisplay);
+
+        table_lines.push({average:averageNum, sum_factor:sum_factor, tr: $(`#rankings-table > tbody > tr:nth-child(${l})`).html()});
+
+        table_lines.sort((a,b) => ( (a.average - b.average) || (b.sum_factor - a.sum_factor) )); 
+        console.log(table_lines);
+
     }
+
+    sortTable(table_lines);
+    
 }
 
 
-function sortTable() {
-    ;
+function sortTable(table_lines) {
+    let table_body = $(`#rankings-table > tbody`);
+    table_body.html('');
+    for (l=0; l<table_lines.length; l++) {
+        table_body.append(`<tr>${table_lines[l].tr}</tr>`);
+    }
 }
