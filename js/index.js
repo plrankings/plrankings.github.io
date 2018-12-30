@@ -1,3 +1,4 @@
+let limit = 20;
 var dtable;
 var active_rankings = 4;
 var position_points = [];
@@ -20,7 +21,6 @@ $(document).ready( function () {
 } );
 
 function configPoints() {
-    let limit = 20;
     for (p=limit; p>0; p--) {
         position_points.push(parseInt(1.5**p));
     }
@@ -153,16 +153,23 @@ function updateAverages() {
         for (var c=0; c<columns.length; c++) {
             $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${columns[c]}) > span`).each(function(){
                 if ($(this).is(":visible")) {
-                    count++;
-                    let position = Number($(this).html().trim());
-                    sum += position;
-                    sum_factor += position_points[position-1];
+                    let position = $(this).html().trim();
+                    if (!isNaN(position)) {
+                        count++;
+                        position = Number(position);
+                        sum += position;
+                        sum_factor += position_points[position-1];
+                    }
                 }
             });
         }
-        let averageNum = sum/count;
-        let averageFixed2 = averageNum.toFixed(2);
-        let averageDisplay = averageFixed2.indexOf('.00')>0 ? averageNum : averageFixed2; 
+        let averageDisplay = '-';
+        let averageNum = limit;
+        if (count>0) {
+            averageNum = sum/count;
+            let averageFixed2 = averageNum.toFixed(2);
+            averageDisplay = averageFixed2.indexOf('.00')>0 ? averageNum : averageFixed2; 
+        }
         $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${avg_column}) > b`).html(averageDisplay);
 
         table_lines.push({average:averageNum, sum_factor:sum_factor, tr: $(`#rankings-table > tbody > tr:nth-child(${l})`).html()});
