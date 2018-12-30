@@ -13,7 +13,7 @@ tr:hover {
 }
 
 .top-div img {
-    margin-right: 0.5em;
+    margin-right: 1.5em;
 }
 
 .img-disabled {
@@ -70,4 +70,8 @@ footer {
 td i.neutral.fas.fa-stop {
     font-size: 0.5em;
     margin-left: 1.2em;
+}
+
+h3 {
+    font-weight: bold;
 }
