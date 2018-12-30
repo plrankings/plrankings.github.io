@@ -36,7 +36,7 @@ td i {
 }
 
 .neutral {
-    color: rgb(124, 124, 124);
+    color: rgb(144, 144, 144);
 }
 
 .invisible-text {
@@ -68,5 +68,6 @@ footer {
 }
 
 td i.neutral.fas.fa-stop {
-    font-size: 0.6em;
+    font-size: 0.5em;
+    margin-left: 1.2em;
 }
