@@ -32,7 +32,8 @@ function createDataTable() {
             searching: true, 
             ordering: false,
             info: false,
-            responsive: true
+            responsive: true,
+            autoWidth: false
     });
 }
 
