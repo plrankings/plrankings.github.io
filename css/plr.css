@@ -75,3 +75,21 @@ td i.neutral.fas.fa-stop {
 h3 {
     font-weight: bold;
 }
+
+.choose {
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    margin-bottom: 0.5em;
+}
+
+.table {
+    width: 94%;
+    margin-left: 3%;
+}
+
+.navbar-toggler-icon {
+    background-color: #666666;
+}
+
+#mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link, #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus  {
+    color: #888888;
+}

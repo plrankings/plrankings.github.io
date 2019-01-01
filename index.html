@@ -26,9 +26,30 @@
         <link href="css/plr-mobile.css" rel="stylesheet">
 
   </head>
-  <body>
+  <body id="page-top">
 
-    <h3>Programming Languages Rankings Comparison </h3>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #333333">
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="#page-top">Programming Languages Rankings Comparison</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#rankings">Rankings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>    
 
     <div style="font-size: 0.8em">
         <i>
@@ -38,7 +59,7 @@
     </div>
 
     <div class="top-div">
-        <div>Choose the Rankings:</div>
+        <div class="choose">Choose the Rankings:</div>
         <div class="ranking-box">
           <img src="img/ieee-logo-mini.png" alt="ieee logo" title="IEEE Spectrum">
           
@@ -548,6 +569,43 @@
       
         </tbody>
       </table>
+
+      <section id="rankings">
+          <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                  <h2 class="section-heading">Analized Rankings</h2>
+                  <hr class="my-4">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3 ml-auto text-center">
+                    <a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018"
+                    target="_blank"><img src="img/ieee-logo-mini.png" alt="ieee logo" title="IEEE Spectrum"></a>
+                  <p>IEEE Spectrum</p>
+                </div>
+                <div class="col-lg-3 mr-auto text-center">
+                    <a href="http://pypl.github.io/PYPL.html"
+                    target="_blank">  <img src="img/pypl-logo-mini.png" alt="pypl logo" title="PYPL Index"></a>
+                  <p>
+                      PYPL Index
+                  </p>
+                </div>
+                <div class="col-lg-3 ml-auto text-center">
+                    <a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/"
+                    target="_blank"><img src="img/redmonk-logo-mini.png" alt="redmonk logo" title="RedMonk Ranking"></a>
+                  <p>RedMonk Ranking</p>
+                </div>
+                <div class="col-lg-3 mr-auto text-center">
+                    <a href="https://www.tiobe.com/tiobe-index/"
+                    target="_blank">  <img src="img/tiobe-logo-mini.png" alt="tiobe logo" title="Tiobe Index"></a>
+                  <p>
+                      TIOBE Index
+                  </p>
+                </div>                
+              </div>
+            </div>
+      </section>
       
     
     <footer>
@@ -573,7 +631,11 @@
 
 <script src="js/dataTables.rowsGroup.js"></script>
 
+<script src="js/creative.min.js"></script>
+
 <script src="js/index.js"></script>
+
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131398706-1"></script>

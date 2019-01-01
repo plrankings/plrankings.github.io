@@ -10,4 +10,18 @@ and (max-device-width : 480px) {
         display: none;
     }
 
+    .table {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    #mainNav .navbar-brand {
+        color: rgba(255,255,255,.7);
+
+    }
+
+    #mainNav .navbar-nav>li.nav-item>a.nav-link, #mainNav .navbar-nav>li.nav-item>a.nav-link:focus {
+        color: rgba(255,255,255,.7);
+    }
+
 }

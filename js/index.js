@@ -17,7 +17,7 @@ $(document).ready( function () {
 
     updateAverages();
 
-
+    ScrollReveal().reveal('section');
 } );
 
 function configPoints() {
