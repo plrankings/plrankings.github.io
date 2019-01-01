@@ -1,0 +1,4 @@
+A fim de ajudar programadores, essa página agrega vários rankings de popularidade de linguagens de programação.
+
+Os mais importantes são os do IEEE, PYPL, RedMonk e TIOBE (ordem alfabética). Eles usam diferentes critérios e possuem diferentes frequências de atualização. Essa página é atualizada por um agregador que verifica semanalmente se há atualizações nesses rankings. Havendo, sua tabela é atualizada.
+

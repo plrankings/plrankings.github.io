@@ -1,0 +1,3 @@
+There are several rankings of programming languages. The most important are the IEEE, PYPL, RedMonk and TIOBE (alphabetical order).
+They use different criteria and have different update rates.
+This page is updated by an aggregator that checks weekly for updates to these rankings. If there are, your table is updated.

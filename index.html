@@ -31,10 +31,12 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #333333">
         <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
           <a class="navbar-brand js-scroll-trigger" href="#page-top">Programming Languages Rankings Comparison</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
@@ -51,63 +53,38 @@
         </div>
       </nav>    
 
-    <div style="font-size: 0.8em">
+    <div class="lu-div">
         <i>
         <span id="span_last_updated">Last Updated</span>: 
         <b id="b_last_updated">01/01/2019</b>
         </i>
     </div>
 
+    
+
     <div class="top-div">
-        <div class="choose">Choose the Rankings:</div>
+        <div class="choose">Choose the Rankings:</div>    
+        
+        
         <div class="ranking-box">
           <img src="img/ieee-logo-mini.png" alt="ieee logo" title="IEEE Spectrum">
-          
-          <div>
-            <a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018"
-            target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
-            <i class="fas fa-info-circle"></i>
-          </div>
         </div>
 
         <div class="ranking-box">
           <img src="img/pypl-logo-mini.png" alt="pypl logo" title="PYPL Index">        
-          
-          <div>
-            <a href="http://pypl.github.io/PYPL.html"
-            target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
-            <i class="fas fa-info-circle"></i>
-          </div>
         </div>
 
         <div class="ranking-box">
           <img src="img/redmonk-logo-mini.png" alt="redmonk logo" title="RedMonk Ranking">
-          
-          <div>
-            <a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/"
-            target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
-            <i class="fas fa-info-circle"></i>
-          </div>
         </div>
 
         <div class="ranking-box">
           <img src="img/tiobe-logo-mini.png" alt="tiobe logo" title="Tiobe Index">
-          
-          <div>
-            <a href="https://www.tiobe.com/tiobe-index/"
-            target="_blank"><i class="fas fa-external-link-square-alt"></i></a>
-            <i class="fas fa-info-circle"></i>
-          </div>
         </div>
 
     </div>
 
-    <p style="margin-bottom: 2em">
-    <div class="top-div" style="display:none">
-    <input type="text" id="search" placeholder="Search and filter on rankings">
-    </div>
-    </p>
-    <p style="margin-bottom: 0.5em">&nbsp;</p>
+   <p class="table"></p>
     
 
     <table class="table" id="rankings-table">
@@ -570,6 +547,31 @@
         </tbody>
       </table>
 
+      <section id="about">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">What is this table?</h2>
+                <hr class="light my-4">
+
+                <p class="mb-4">
+                In order to help programmers, this page aggregates several popularity rankings for programming languages.
+                </p>
+
+                <p class="mb-4">
+                    The most important <a class="js-scroll-trigger" href="#rankings">rankings</a> are the IEEE, PYPL, RedMonk and TIOBE (alphabetical order).
+                    They use different criteria and have different update rates.
+                    This page is updated by an aggregator that checks weekly for updates to these rankings. If there are, your table is updated.  
+                </p>
+                <p class="mb-4">
+                  Any suggestion? Want furhter information? Please, <a class="js-scroll-trigger" href="#contact">get in touch</a>.
+                </p>
+                
+              </div>
+            </div>
+          </div>
+        </section>      
+
       <section id="rankings">
           <div class="container">
               <div class="row">
@@ -606,6 +608,42 @@
               </div>
             </div>
       </section>
+
+      <section id="contact">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">Let's get in touch!</h2>
+                <hr class="my-4">
+                <p class="mb-5">Suggestions? Criticism? Doubts?</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 ml-auto text-center">
+                  <a href="https://api.whatsapp.com/send?phone=55011957071201&text="><i class="fab fa-whatsapp-square fa-3x mb-3 sr-contact-1 whatsapp"></i>
+                    </a>
+                <p>
+                  <a href="https://api.whatsapp.com/send?phone=55011957071201&text=">
+                  +55-11-95707-1201
+                  </a>
+                </p>
+              </div>
+              <div class="col-lg-4 mr-auto text-center">
+                  <a href="mailto:jyoshiriro@gmail.com"></a><i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i></a>
+                <p>
+                  <a href="mailto:jyoshiriro@gmail.com">jyoshiriro@gmail.com</a>
+                </p>
+              </div>
+              <div class="col-lg-4 mr-auto text-center">
+                  <a target="_blank" href="https://www.linkedin.com/in/jyoshiriro/"><i class="fab fa-linkedin fa-3x mb-3 sr-contact-3 linkedin"></i></a>
+                  <p>
+                    <a href="https://www.linkedin.com/in/jyoshiriro/">/jyoshiriro</a>
+                  </p>
+                </div>              
+            </div>
+          </div>
+        </section>
+          
       
     
     <footer>

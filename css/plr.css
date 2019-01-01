@@ -5,11 +5,16 @@ tr:hover {
 
 }
 
+.lu-div {
+    font-size: 0.8em; 
+    margin-top: 5em; 
+    margin-left: 3%;
+}
+
 .top-div {
     margin-top: 1em; 
     margin-bottom: 1em; 
-    margin-left: 1em; 
-    display: block;
+    margin-left: 3%;
 }
 
 .top-div img {
@@ -65,6 +70,7 @@ td i {
 
 footer {
     margin-bottom: 2em;
+    margin-left: 2em;
 }
 
 td i.neutral.fas.fa-stop {
@@ -84,7 +90,9 @@ h3 {
 .table {
     width: 94%;
     margin-left: 3%;
+    margin-bottom: 4%;
 }
+
 
 .navbar-toggler-icon {
     background-color: #666666;
@@ -92,4 +100,22 @@ h3 {
 
 #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link, #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus  {
     color: #888888;
+}
+
+nav > div.container {
+    margin-left: 0%;
+    margin-right: 0%;
+    max-width: 100%;
+}
+
+.whatsapp {
+    color: #0DC143;
+}
+
+.linkedin {
+    color: #0077B5;
+}
+
+a > i.fa-envelope {
+color: #212529;
 }

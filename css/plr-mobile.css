@@ -13,6 +13,7 @@ and (max-device-width : 480px) {
     .table {
         width: 100%;
         margin-left: 0%;
+        margin-bottom: 7%;
     }
 
     #mainNav .navbar-brand {
@@ -24,4 +25,7 @@ and (max-device-width : 480px) {
         color: rgba(255,255,255,.7);
     }
 
+    nav > div.container {
+        max-width: 84%;
+    }
 }
