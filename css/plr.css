@@ -117,5 +117,10 @@ nav > div.container {
 }
 
 a > i.fa-envelope {
-color: #212529;
+    color: #212529;
+}
+
+.sup { 
+    vertical-align: super;
+    font-size: smaller;
 }
