@@ -123,3 +123,8 @@ color: #212529;
 #page-top > div.top-div > div > img {
     cursor: pointer;
 }
+
+.sup { 
+    vertical-align: super;
+    font-size: smaller;
+}

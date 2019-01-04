@@ -1,4 +1,4 @@
-let limit = 20;
+let limit = 15;
 var dtable;
 var active_rankings = 4;
 var position_points = [];
@@ -155,12 +155,13 @@ function updateAverages() {
             $(`#rankings-table > tbody > tr:nth-child(${l}) > td:nth-child(${columns[c]}) > span`).each(function(){
                 if ($(this).is(":visible")) {
                     let position = $(this).html().trim();
-                    if (!isNaN(position)) {
-                        count++;
-                        position = Number(position);
-                        sum += position;
-                        sum_factor += position_points[position-1];
+                    if (isNaN(Number(position))) {
+                        position = limit;
                     }
+                    count++;
+                    position = Number(position);
+                    sum += position;
+                    sum_factor += position_points[position-1];
                 }
             });
         }
