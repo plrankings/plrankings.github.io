@@ -1,6 +1,6 @@
 let limit = 15;
 var dtable;
-var active_rankings = 4;
+var active_rankings = 5;
 var position_points = [];
 
 $(document).ready( function () {
@@ -115,7 +115,7 @@ function configLogoFilters() {
             }
 
             let language_columns = $("[id='language_column']");
-            if (active_rankings!=4) {
+            if (active_rankings!=5) {
                 language_columns.each(function() {
                     $(this).removeClass('invisible-text');
                 });
@@ -144,8 +144,8 @@ function configLogoFilters() {
 function updateAverages() {
     let table_lines = [];
     let lines = $("#rankings-table > tbody > tr").length;
-    let columns = [3,4,5,6];
-    let avg_column = 7;
+    let columns = [3,4,5,6,7];
+    let avg_column = 8;
     for (l=1; l<=lines; l++) {
         let sum = 0;
         let sum_factor = 0;
