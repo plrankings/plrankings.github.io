@@ -1,10 +1,12 @@
-<html lang="pt">
+<html lang="pt-BR">
   <head>
     <title>Comparação dos rankings de linguagens de programação (IEEE, PYPL, RedMonk and TIOBE)</title>
     <meta charset="utf-8">
     <meta name="description" content="Comparação dos rankings de popularidade de linguagens de programação">
     <meta name="keywords" content="Programação,linguagens,rankings,ranking,popularidade, comparação,javascript,java,c#,python,kotlin,php,go,c++,cobol,groovy,sql,scala,ruby,lua,typescript">
     <meta name="author" content="José Yoshiriro (jyoshiriro@gmail.com)">    
+
+    <script src="js/lang.js"></script>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +22,9 @@
         <!-- Custom styles for this template -->
         <link href="css/creative.min.css" rel="stylesheet">
 
-        <link href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet">
 
         <link href="css/plr.css" rel="stylesheet">
         <link href="css/plr-mobile.css" rel="stylesheet">
@@ -28,30 +32,46 @@
   </head>
   <body id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #333333">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #333333">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-          <a class="navbar-brand js-scroll-trigger" href="#page-top">Comparação dos rankings de linguagens de programação</a>
-          
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#rankings">Rankings</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
-              </li>
-            </ul>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Comparação dos rankings de linguagens de programação</a>
+      
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#rankings">Rankings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive" title="Escolha o idioma">
+          <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-br"> </span> 
+            Brasil</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown09">
+              <a class="dropdown-item" href="?lang=en"><i class="flag-icon flag-icon-us"> </i>  English</a>
+              <a class="dropdown-item" href="?lang=pt-BR"><i class="flag-icon flag-icon-br"> </i>  Pt Brasil</a>
           </div>
-        </div>
-      </nav>    
+      </li>
+      </ul>
+      
+      </div>
+    </div>
+
+  </nav>    
+  
 
     <div class="lu-div">
         <i>
@@ -547,104 +567,131 @@
         </tbody>
       </table>
 
-      <section id="about">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading">O que é essa tabela?</h2>
-                <hr class="light my-4">
-
-                <p class="mb-4">
-A fim de ajudar programadores a saber como anda a adoção das linguagens de programação, 
-essa página agrega vários rankings de popularidade de linguagens.
-                </p>
-
-                <p class="mb-4">
-                    Os <a class="js-scroll-trigger" href="#rankings">rankings</a> mais importantes são IEEE, PYPL, RedMonk and TIOBE (ordem alfabética).
-                    Eles adotam diferentes critérios de classificação e possuem diferentes frequências de atualização.
-                    Essa página é atualizada por um agregador que verifica semanalmente por atualizações nesses rankings.
-                    Se forem encontradas alterações, essa tabela é atualizada.
-                </p>
-                <p class="mb-4">
-                  Any suggestion? Want furhter information? Please, <a class="js-scroll-trigger" href="#contact">get in touch</a>.
-                </p>
-                
-              </div>
-            </div>
-          </div>
-        </section>      
-
-      <section id="rankings">
-          <div class="container">
+        <section id="about">
+            <div class="container">
               <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                  <h2 class="section-heading">Analized Rankings</h2>
+                    <h2 class="section-heading">O que é essa tabela?</h2>
+                  <hr class="light my-4">
+  
+                  <p class="mb-4">
+                      A fim de ajudar programadores a saber como anda a adoção das linguagens de programação, 
+                      essa página agrega vários rankings de popularidade de linguagens.
+                  </p>
+  
+                  <p class="mb-4">
+                      Os <a class="js-scroll-trigger" href="#rankings">rankings</a> mais importantes são IEEE, PYPL, RedMonk and TIOBE (ordem alfabética).
+                      Eles adotam diferentes critérios de classificação e possuem diferentes frequências de atualização.
+                      Essa página é atualizada por um agregador que verifica semanalmente por atualizações nesses rankings.
+                      Se forem encontradas alterações, essa tabela é atualizada.
+                  </p>
+  
+                  <p class="mb-4">
+                    Por enquanto, essa tabela contém apenas as <b>15</b> linguagens mais populares nos 4 rankings adotados.
+                  </p>
+                  
+                  <p class="mb-4">
+                  <b>Dica</b>: Ao clicar nos logos dos rankings no topo da página, esses rankings são excluídos ou incluídos da tabela. 
+                  Então as posições são recalculadas e as linguagens são reposicionadas imediatamente.
+                  </p>
+  
+                  <p class="mb-4">
+                    <h4>Cálculo da posição média</h4>                 
+                    A <b>posição média</b> é a média aritmética siples entre as posições nos rankings.
+                    Porém, caso uma linguagem não esteja presente em algum ranking, será considerada a posição <b>15</b> nesse ranking.
+                  </p>
+  
+                  <p class="mb-4">
+                      <h4>Mesma posição média. Quais os critérios de desempate? </h4> 
+                      <b>1.</b> Quantidade de 1º<span class="sup">s</span> lugares <br>
+                      <b>2.</b> Quantidade de 2º<span class="sup">s</span> lugares <br>
+                      <b>3.</b> Quantidade de 3º<span class="sup">s</span> lugares <br>
+                      <i>(E assim por diante...)</i> <br>
+                      <b>16.</b> Ordem alfabética <br>
+                  </p>
+                  <p class="mb-4">
+                    Sugestões? Deseja mais informações? Por favor, <a class="js-scroll-trigger" href="#contact">entre em contato</a>.
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </section>      
+  
+        <section id="rankings">
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Rankings analizados</h2>
+                    <hr class="my-4">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 ml-auto text-center">
+                      <a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018"
+                      target="_blank"><img src="img/ieee-logo-mini.png" alt="ieee logo" title="IEEE Spectrum"></a>
+                    <p>IEEE Spectrum</p>
+                  </div>
+                  <div class="col-lg-3 mr-auto text-center">
+                      <a href="http://pypl.github.io/PYPL.html"
+                      target="_blank">  <img src="img/pypl-logo-mini.png" alt="pypl logo" title="PYPL Index"></a>
+                    <p>
+                        PYPL Index
+                    </p>
+                  </div>
+                  <div class="col-lg-3 ml-auto text-center">
+                      <a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/"
+                      target="_blank"><img src="img/redmonk-logo-mini.png" alt="redmonk logo" title="RedMonk Ranking"></a>
+                    <p>RedMonk Ranking</p>
+                  </div>
+                  <div class="col-lg-3 mr-auto text-center">
+                      <a href="https://www.tiobe.com/tiobe-index/"
+                      target="_blank">  <img src="img/tiobe-logo-mini.png" alt="tiobe logo" title="Tiobe Index"></a>
+                    <p>
+                        TIOBE Index
+                    </p>
+                  </div>                
+                </div>
+              </div>
+        </section>
+  
+        <section id="contact">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                  <h2 class="section-heading">Vamos bater um papo!</h2>
                   <hr class="my-4">
+                  <p class="mb-5">Sugestões? Críticas? Dúvidas? 
+                    <br>
+                  Fale com <b>José Yoshiriro</b> (ou simplesmente <b>Yoshi</b>), o criador dessa página.
+                  </p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-lg-3 ml-auto text-center">
-                    <a href="https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018"
-                    target="_blank"><img src="img/ieee-logo-mini.png" alt="ieee logo" title="IEEE Spectrum"></a>
-                  <p>IEEE Spectrum</p>
-                </div>
-                <div class="col-lg-3 mr-auto text-center">
-                    <a href="http://pypl.github.io/PYPL.html"
-                    target="_blank">  <img src="img/pypl-logo-mini.png" alt="pypl logo" title="PYPL Index"></a>
+                <div class="col-lg-4 ml-auto text-center">
+                    <a href="https://api.whatsapp.com/send?phone=55011957071201&text="><i class="fab fa-whatsapp-square fa-3x mb-3 sr-contact-1 whatsapp"></i>
+                      </a>
                   <p>
-                      PYPL Index
-                  </p>
-                </div>
-                <div class="col-lg-3 ml-auto text-center">
-                    <a href="https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/"
-                    target="_blank"><img src="img/redmonk-logo-mini.png" alt="redmonk logo" title="RedMonk Ranking"></a>
-                  <p>RedMonk Ranking</p>
-                </div>
-                <div class="col-lg-3 mr-auto text-center">
-                    <a href="https://www.tiobe.com/tiobe-index/"
-                    target="_blank">  <img src="img/tiobe-logo-mini.png" alt="tiobe logo" title="Tiobe Index"></a>
-                  <p>
-                      TIOBE Index
-                  </p>
-                </div>                
-              </div>
-            </div>
-      </section>
-
-      <section id="contact">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading">Let's get in touch!</h2>
-                <hr class="my-4">
-                <p class="mb-5">Suggestions? Criticism? Doubts?</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-4 ml-auto text-center">
-                  <a href="https://api.whatsapp.com/send?phone=55011957071201&text="><i class="fab fa-whatsapp-square fa-3x mb-3 sr-contact-1 whatsapp"></i>
+                    <a href="https://api.whatsapp.com/send?phone=55011957071201&text=">
+                    +55-11-95707-1201
                     </a>
-                <p>
-                  <a href="https://api.whatsapp.com/send?phone=55011957071201&text=">
-                  +55-11-95707-1201
-                  </a>
-                </p>
-              </div>
-              <div class="col-lg-4 mr-auto text-center">
-                  <a href="mailto:jyoshiriro@gmail.com"></a><i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i></a>
-                <p>
-                  <a href="mailto:jyoshiriro@gmail.com">jyoshiriro@gmail.com</a>
-                </p>
-              </div>
-              <div class="col-lg-4 mr-auto text-center">
-                  <a target="_blank" href="https://www.linkedin.com/in/jyoshiriro/"><i class="fab fa-linkedin fa-3x mb-3 sr-contact-3 linkedin"></i></a>
-                  <p>
-                    <a href="https://www.linkedin.com/in/jyoshiriro/">/jyoshiriro</a>
                   </p>
-                </div>              
+                </div>
+                <div class="col-lg-4 mr-auto text-center">
+                    <a href="mailto:jyoshiriro@gmail.com"></a><i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i></a>
+                  <p>
+                    <a href="mailto:jyoshiriro@gmail.com">jyoshiriro@gmail.com</a>
+                  </p>
+                </div>
+                <div class="col-lg-4 mr-auto text-center">
+                    <a target="_blank" href="https://www.linkedin.com/in/jyoshiriro/"><i class="fab fa-linkedin fa-3x mb-3 sr-contact-3 linkedin"></i></a>
+                    <p>
+                      <a href="https://www.linkedin.com/in/jyoshiriro/">/jyoshiriro</a>
+                    </p>
+                  </div>              
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
           
       
     
